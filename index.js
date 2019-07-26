@@ -38,7 +38,7 @@ const Post = require('./models/Post')
 
 app.get('/deletar/:id', function(req, res){
   Post.destroy({where: {'id': req.params.id}}).then(function(){
-    res.send("Postagem deletada com sucesso!")
+    res.redirect('/')
   }).catch(function(erro){
     res.send("Postagem n foi deletada!"+erro)
   }) //pegar o id q vem na rota
